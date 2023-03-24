@@ -1,0 +1,23 @@
+ <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <div id="login-page">
+        <div class="container">
+          <form class="form-login" action="index.html" (ngSubmit)="login()" >
+            <h2 class="form-login-heading">sign in now</h2>
+            <div class="login-wrap">
+              <input type="text" class="form-control" placeholder="First Name" [(ngModel)]='user.firstName' [ngModelOptions]="{standalone: true}" required="required" autofocus> <br>
+              
+              <input type="password" class="form-control" placeholder="Password" [(ngModel)]='user.password' [ngModelOptions]="{standalone: true}" required="required"> <br>
+              <button class="btn btn-theme btn-block"type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+              <hr>
+              <div class="registration">
+                
+                <a class="" href="login-up" >
+                  Login Up
+                  </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>

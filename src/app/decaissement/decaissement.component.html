@@ -1,0 +1,278 @@
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+          TOP BAR CONTENT & NOTIFICATIONS
+          *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <!--logo start-->
+      <a href="index" class="logo"><b>ALENJAZE <span>CAISSE</span></b></a>
+      <!--logo end-->
+      <div class="top-menu">
+
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout" (click)="logOut()">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN SIDEBAR MENU
+          *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse " *ngFor="let signups of signups">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="profil"><img src="assets/images/{{signups.img}}" class="img-circle"
+                width="80"></a></p>
+          <h5 class="centered">{{user.firstName}} {{signups.lastName}}</h5>
+          <li class="mt" style="margin-top: 20%;">
+            <a class="active" href="encaissement">
+              <i class="fa fa-dashboard"></i>
+              <span>Encaissement</span>
+            </a>
+          </li>
+          <li class="mt" style="margin-top: 5%;">
+            <a class="active" href="decaissement">
+              <i class="fa fa-dashboard"></i>
+              <span>Decaissement</span>
+            </a>
+          </li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+          MAIN CONTENT
+          *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content"  >
+      <section class="wrapper" >
+        <div class="row" >
+          <form style="margin-top: 5%;" [formGroup]="searchForm">
+            <label for="ice-cream-choice">Caisse:</label>
+            <select formControlName="CAISSE" required="required">
+              <option value="caisse 1"  >Caisse 1</option>
+              <option value="caisse 2">Caisse 2</option>
+            </select>
+            <label style="margin-left: 3%;">Année: </label>
+            <input id="month" type="month" style="width: 45%;" formControlName="ANNEE" required="required">
+          </form>
+          <input style="margin-left: 40%;margin-top: 4%;padding-left: 10%;padding-right: 10%;" type="submit"
+            value="Search" (click)="search(searchForm.value)">
+
+          <h1> <i class='fas fa-user-cog' style='font-size:36px'></i> DECAISSEMENT</h1>
+  
+          <div>
+            <!-- Trigger the modal with a button -->
+            <button type="button" data-toggle="modal" data-target="#myModal" style="margin-left: 95%;"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                <path
+                  d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z" />
+              </svg></button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Ajouter encaissement</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action='' class='form' [formGroup]="decaisseForm">
+                      <p class='field half'>
+                        <label class='label'>Date</label>
+                        <input class='text-input' id='date' name='date' type='date' formControlName="date" required="required">
+                      </p>
+                      <p class='field half'>
+                        <label class='label' for='phone'>BENEFICIER</label>
+                        <input class='text-input' id='phone' name='BENEFICIER' placeholder="BENEFICIER" type='phone' formControlName="beneficier" required="required">
+                      </p>
+                      <p class='field half'>
+                        <label class='label'>MODALITE DE REGLEMENT</label>
+                        <select  class='text-input' formControlName="modalite" required="required">
+                          <option value="Espace">Espece</option>
+                          <option value="Cheque">Cheque</option>
+                          <option value="Virement">Virement</option>
+                          <option value="Virement">Versement</option>
+                        </select>
+                      </p>
+                      <p class='field half'>
+                        <label class='label' for='phone'>NUMERO CHEQUE / REFERENCE</label>
+                        <input class='text-input' id='N/cheque' name='N/cheque' placeholder="NUMERO CHEQUE / REFERENCE"
+                          type='N/cheque' formControlName="Ncheque" required="required">
+                      </p>
+                      <p class='field half'>
+                        <label class='label'>BANK</label>
+                        <select name="bank" class='text-input'  formControlName="bank" required="required" ngDefaultControl>
+                          <option  value="Attijari">ATTIJARI</option>
+                          <option value="BIAT"plac>BIAT</option>
+                          <option value="UBCI">UBCI</option>
+                          <option value="ATB">ATB</option>
+                          <option value="UIB">UIB</option>
+                          <option value="BNA">BNA</option>
+                          <option value="BTK">BTK</option>
+                          <option value="AMEN BANK">AMEN BANK</option>
+                          <option value="BH">BH</option>
+                          <option value="BTL">BTL</option>
+                          <option value="BTE">BTE</option>
+                          <option value="ZITOUNA">ZITOUNA</option>
+                          <option value="STUSID">STUSID</option>
+                          <option value="STB">STB</option>
+                          <option value="QNB">QNB</option>
+                          <option value="NFI">NFI</option>
+                          <option value="POSTE">POSTE</option>
+                        </select>
+                      </p>
+                      <p class='field half'>
+                        <label class='label' for='phone'>NO. COMPTE</label>
+                        <input class='text-input' id='N/compte' name='N/compte' placeholder="NO. COMPTE" type='Ncompte' formControlName="Ncompte" required="required">
+                      </p>
+                      <p class='field half'>
+                        <label class='label' for='phone'>caisse</label>
+                        <select name="caisse" class='text-input' formControlName="caisse" required="required">
+                          <option value="caisse 1"  >Caisse 1</option>
+                          <option value="caisse 2" selected>Caisse 2</option>
+                        </select>
+                      </p>
+                      <p class='field half' >
+                        <label class='label' for='phone'>Année</label>
+                        <input  class='text-input' id="month" type="month" formControlName="annee" required="required">
+                      </p>
+                      <label class='label required'>MONTANT</label>
+                      <input class='text-input' placeholder="MONTANT" formControlName="montant" required="required">
+                      <label class='label required'>OBJET DE REGLEMENT</label>
+                      <input class='text-input' placeholder="OBJET DE REGLEMENT" formControlName="objet" required="required">
+                      <label class='label required'>OBSERVATION</label>
+                      <input class='text-input' placeholder="OBSERVATION" formControlName="observation" required="required">
+
+                    </form>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="decaisse(decaisseForm.value)">Enregistrer</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <main>
+            <table>
+              <thead>
+                <tr>
+                  <th tyle="text-align: center;">
+                    N°
+                  </th>
+                  <th style="margin-left: 15%;">
+                    Date
+                  </th>
+                  <th tyle="text-align: center;">
+                    Bénéficer
+                  </th>
+                  <th tyle="text-align: center;">
+                    Modalité
+                  </th>
+                  <th tyle="text-align: center;">
+                    N° (chéque/Réf)
+                  </th>
+                  <th tyle="text-align: center;">
+                    N°Compte
+                  </th>
+                  <th tyle="text-align: center;">
+                    Montant
+                  </th>
+                  <th tyle="text-align: center;">
+                    Objet
+                  </th>
+                  <th tyle="text-align: center;">
+                    Réglage
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th colspan='8'>
+                    Total: {{TTC.toLocaleString()}}
+                  </th>
+                </tr>
+              </tfoot>
+              <tbody *ngFor="let searchTab of searchTab; let i = index">
+                <tr  style="text-align: center;" >
+                  <td >
+                    {{i+1}}
+                  </td>
+                  <td >
+                    {{searchTab.date}}
+                  </td>
+                  <td style="text-align: center;">{{searchTab.beneficier}}</td>
+                  <td style="text-align: center;">{{searchTab.modalite}}</td>
+                  <td style="text-align: center;">{{searchTab.Ncheque}}</td>
+                  <td style="text-align: center;">{{searchTab.Ncompte}}</td>
+                  <td style="text-align: center;">{{searchTab.montant.toLocaleString()}}</td>
+                  <td style="text-align: center;">{{searchTab.objet}}</td>
+                  <td style="text-align: center;" class='select'>
+                    <a class='button' href='#'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-printer-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+                        <path
+                          d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                      </svg>
+                    </a>
+                    <a class='button' (click)="editdecaisse(searchTab._id)" style="margin-left: 2%;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                      </svg>
+                    </a>
+                    <a class='button' (click)="delete(searchTab._id)" style="margin-left: 2%;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-file-earmark-x-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.854 7.146 8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 1 1 .708-.708z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </main>
+
+        </div>
+        <!-- /row -->
+
+      </section>
+
+    </section>
+
+
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer" style="margin-top:39% ;">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights <strong>Oussama</strong>. All Rights Reserved
+        </p>
+        <a class="go-top">
+          <i class="fa fa-angle-up"></i>
+        </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+
+</body>

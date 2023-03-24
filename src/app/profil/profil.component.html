@@ -1,0 +1,106 @@
+
+<body>
+    <section id="container">
+      <!-- **********************************************************************************************************************************************************
+          TOP BAR CONTENT & NOTIFICATIONS
+          *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+        <!--logo start-->
+        <a href="index" class="logo"><b>ALENJAZE <span>CAISSE</span></b></a>
+        <!--logo end-->
+        <div class="top-menu">
+  
+          <ul class="nav pull-right top-menu">
+            <li><a class="logout" (click)="logOut()">Logout</a></li>
+          </ul>
+        </div>
+      </header>
+      <!--header end-->
+      <!-- **********************************************************************************************************************************************************
+          MAIN SIDEBAR MENU
+          *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+        <div id="sidebar" class="nav-collapse " *ngFor="let signups of signups">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="profil"><img src="assets/images/{{signups.img}}" class="img-circle" width="80"></a></p>
+            <h5 class="centered">{{user.firstName}} {{user.lastName}}</h5>
+            <li class="mt" style="margin-top: 20%;">
+              <a class="active" href="encaissement">
+                <i class="fa fa-dashboard"></i>
+                <span>Encaissement</span>
+                </a>
+            </li>
+            <li class="mt" style="margin-top: 5%;">
+              <a class="active" href="decaissement">
+                <i class="fa fa-dashboard"></i>
+                <span>Decaissement</span>
+                </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+        </div>
+      </aside>
+      <!--sidebar end-->
+      <!-- **********************************************************************************************************************************************************
+          MAIN CONTENT
+          *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content" *ngFor="let signups of signups">
+        <section class="wrapper">
+          <div class="row">
+            <div class="container rounded bg-white mt-5 mb-5" style="margin-top: 5%;">
+                <div class="row">
+                    <div class="col-md-3 border-right">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="assets/images/{{signups.img}}"></div>
+                    </div>
+                    <div class="col-md-5 border-right">
+                        <div class="p-3 py-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-right" style="text-align: center;">Profile Settings</h4>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="" value="{{user.firstName}}"></div>
+                                <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="{{user.lastName}}" placeholder="surname"></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value="{{user.numberPhone}}"></div>
+                            </div>
+
+                            <div class="mt-5 text-center" style="margin-top: 4%;"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- /col-lg-9 END SECTION MIDDLE -->
+            <!-- **********************************************************************************************************************************************************
+                RIGHT SIDEBAR CONTENT
+                *********************************************************************************************************************************************************** -->
+        
+          <!-- /row -->
+        </section>
+      </section>
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer" style="margin-top:39% ;">
+        <div class="text-center">
+          <p>
+            &copy; Copyrights <strong>Oussama</strong>. All Rights Reserved
+          </p>
+          <a class="go-top">
+            <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+      </footer>
+      <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    
+  </body>
+  
+  <!-- https://bbbootstrap.com/snippets/bootstrap-5-myprofile-90806631 -->
+  

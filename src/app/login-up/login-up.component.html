@@ -1,0 +1,35 @@
+ <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <div id="login-page">
+        <div class="container">
+          <form class="form-login" action="index.html" [formGroup]="signupForm">
+            <h2 class="form-login-heading">sign up now</h2>
+            <div class="login-wrap">
+              <input type="text" class="form-control" placeholder="First Name" formControlName="firstName" required="required"  autofocus>
+              <br>
+              <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required="required" autofocus> <br>
+              <input type="text" class="form-control" placeholder="number Phone" formControlName="numberPhone" required="required" autofocus> <br>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" required="required"> <br>
+              <div>
+                <div>
+                    <button class="btn btn-secondary" (click)='filePicker.click()' style="margin-top: 5%;margin-left: 2%;">Your photo</button>
+                </div>
+                  <div style="visibility: hidden;">
+                    <div class="form_title">image</div>
+                    <input type="file" class="comment_input" required="required" #filePicker (change)='onImageSelected($event)'>
+                </div>
+                <img [src]="imagePreview" *ngIf='imagePreview' width="30%" style="margin-bottom: 5%;" >
+            </div>
+              <button class="btn btn-theme btn-block" (click)="signup(signupForm.value)" type="submit"><i class="fa fa-lock"></i> SIGN UP</button>
+              <hr>
+              <div class="registration">
+                I have an account<br/>
+                <a class="" href="/">
+                  Login In
+                  </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>

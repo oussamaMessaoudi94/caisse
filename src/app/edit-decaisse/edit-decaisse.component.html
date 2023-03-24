@@ -1,0 +1,156 @@
+<body>
+    <section id="container">
+      <!-- **********************************************************************************************************************************************************
+            TOP BAR CONTENT & NOTIFICATIONS
+            *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+        <!--logo start-->
+        <a href="index" class="logo"><b>ALENJAZE <span>CAISSE</span></b></a>
+        <!--logo end-->
+        <div class="top-menu">
+  
+          <ul class="nav pull-right top-menu">
+            <li><a class="logout" (click)="logOut()">Logout</a></li>
+          </ul>
+        </div>
+      </header>
+      <!--header end-->
+      <!-- **********************************************************************************************************************************************************
+            MAIN SIDEBAR MENU
+            *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+        <div id="sidebar" class="nav-collapse " *ngFor="let signups of signups">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="profil"><img src="assets/images/{{signups.img}}" class="img-circle"
+                  width="80"></a></p>
+            <h5 class="centered">{{user.firstName}} {{user.lastName}}</h5>
+            <li class="mt" style="margin-top: 20%;">
+              <a class="active" href="encaissement">
+                <i class="fa fa-dashboard"></i>
+                <span>Encaissement</span>
+              </a>
+            </li>
+            <li class="mt" style="margin-top: 5%;">
+              <a class="active" href="decaissement">
+                <i class="fa fa-dashboard"></i>
+                <span>Decaissement</span>
+              </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+        </div>
+      </aside>
+  
+      <!--sidebar end-->
+      <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content"  >
+        <section class="wrapper" >
+          <div class="row" >
+  
+            <h1> <i class='fas fa-user-cog' style='font-size:36px'></i> EDIT DECAISSEMENT</h1>
+    
+
+  
+            </div>
+            <div>
+            <form action='' class='form' [formGroup]="decaisseForm">
+                <p class='field half'>
+                  <label class='label'>Date</label>
+                  <input class='text-input' id='date' name='date' type='date' formControlName="date" required="required" [(ngModel)]="req.date">
+                </p>
+                <p class='field half'>
+                  <label class='label' for='phone'>BENEFICIER</label>
+                  <input class='text-input' id='phone' name='BENEFICIER' placeholder="BENEFICIER" type='phone' formControlName="beneficier" required="required" [(ngModel)]="req.beneficier">
+                </p>
+                <p class='field half'>
+                  <label class='label'>MODALITE DE REGLEMENT</label>
+                  <select  class='text-input' formControlName="modalite" required="required" [(ngModel)]="req.modalite" >
+                    <option value="Espace">Espece</option>
+                    <option value="Cheque">Cheque</option>
+                    <option value="Virement">Virement</option>
+                    <option value="Virement">Versement</option>
+                  </select>
+                </p>
+                <p class='field half'>
+                  <label class='label' for='phone'>NUMERO CHEQUE / REFERENCE</label>
+                  <input class='text-input' id='N/cheque' name='N/cheque' placeholder="NUMERO CHEQUE / REFERENCE"
+                    type='N/cheque' formControlName="Ncheque" required="required" [(ngModel)]="req.Ncheque">
+                </p>
+                <p class='field half'>
+                  <label class='label'>BANK</label>
+                  <select name="bank" class='text-input'  formControlName="bank" required="required" [(ngModel)]="req.bank">
+                    <option  value="Attijari">ATTIJARI</option>
+                    <option value="BIAT"plac>BIAT</option>
+                    <option value="UBCI">UBCI</option>
+                    <option value="ATB">ATB</option>
+                    <option value="UIB">UIB</option>
+                    <option value="BNA">BNA</option>
+                    <option value="BTK">BTK</option>
+                    <option value="AMEN BANK">AMEN BANK</option>
+                    <option value="BH">BH</option>
+                    <option value="BTL">BTL</option>
+                    <option value="BTE">BTE</option>
+                    <option value="ZITOUNA">ZITOUNA</option>
+                    <option value="STUSID">STUSID</option>
+                    <option value="STB">STB</option>
+                    <option value="QNB">QNB</option>
+                    <option value="NFI">NFI</option>
+                    <option value="POSTE">POSTE</option>
+                  </select>
+                </p>
+                <p class='field half'>
+                  <label class='label' for='phone'>NO. COMPTE</label>
+                  <input class='text-input' id='N/compte' name='N/compte' placeholder="NO. COMPTE" type='Ncompte' formControlName="Ncompte" required="required" [(ngModel)]="req.Ncompte">
+                </p>
+                <p class='field half'>
+                  <label class='label' for='phone'>caisse</label>
+                  <select name="caisse" class='text-input' formControlName="caisse" required="required" [(ngModel)]="req.caisse">
+                    <option value="caisse 1"  >Caisse 1</option>
+                    <option value="caisse 2" selected>Caisse 2</option>
+                  </select>
+                </p>
+                <p class='field half' >
+                  <label class='label' for='phone'>Année</label>
+                  <input  class='text-input' id="month" type="month" formControlName="annee" required="required" [(ngModel)]="req.annee">
+                </p>
+                <label class='label required'>MONTANT</label>
+                <input class='text-input' placeholder="MONTANT" formControlName="montant" required="required" [(ngModel)]="req.montant">
+                <label class='label required'>OBJET DE REGLEMENT</label>
+                <input class='text-input' placeholder="OBJET DE REGLEMENT" formControlName="objet" required="required" [(ngModel)]="req.objet">
+                <label class='label required'>OBSERVATION</label>
+                <input class='text-input' placeholder="OBSERVATION" formControlName="observation" required="required" [(ngModel)]="req.observation">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="decaisseEdit()" >Enregistrer</button>
+                  </div>
+              </form>
+            </div>
+          <!-- /row -->
+  
+        </section>
+  
+      </section>
+  
+  
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer" style="margin-top:39% ;">
+        <div class="text-center">
+          <p>
+            &copy; Copyrights <strong>Oussama</strong>. All Rights Reserved
+          </p>
+          <a class="go-top">
+            <i class="fa fa-angle-up"></i>
+          </a>
+        </div>
+      </footer>
+      <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+  
+  </body>

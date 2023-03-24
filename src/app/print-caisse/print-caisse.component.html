@@ -1,0 +1,146 @@
+
+
+    <div id="sidebar" >
+        <div id="outline">
+        </div>
+    </div>
+    <div id="page-container" >
+        <div id="pf1" class="pf w0 h0" data-page-no="1">
+            <div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="assets/bg1.png" />
+                <div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0"> Date: {{date}}</div>
+                <div class="t m0 x2 h3 y2 ff1 fs1 fc0 sc0 ls0 ws0">Reçu Décaissement</div>
+                <div class="t m0 x3 h4 y3 ff1 fs2 fc0 sc0 ls0 ws0">N° &lt;dec_number&gt;</div>
+                <div class="c x4 y4 w2 h5">
+                    <div class="t m0 x5 h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Modalité</div>
+                </div>
+                <div class="c x4 y6 w3 h5" style="padding-top: 100px;">
+                    <div class="t m0 x6 h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Cheque</div>
+                </div>
+                <div class="c x7 y6 w4 h5">
+                    <div class="t m0 x8 h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Espèce </div>
+                </div>
+                <div class="c x9 y7 w5 h7">
+                    <div class="t m0 x8 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Bénéficier </div>
+                </div>
+                <div class="c x4 y9 w6 h8">
+                    <div class="t m0 xa h9 ya ff2 fs3 fc0 sc0 ls0 ws0">N° du cheque</div>
+                </div>
+                <div class="c xb y9 w4 h8">
+                    <div class="t m0 xc h9 ya ff2 fs3 fc0 sc0 ls0 ws0">Bank</div>
+                </div>
+                <div class="c xd y7 w7 h7">
+                    <div class="t m0 xe h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Montant</div>
+                </div>
+                <div class="c xf y7 w8 h7">
+                    <div class="t m0 x10 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Objet du règlement</div>
+                </div>
+                <div class="c x11 y7 w9 h7">
+                    <div class="t m0 x12 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Observation</div>
+                </div>
+                <div class="c x9 yb w5 ha">
+                    <input style="text-align: center;" type="text" size="10" class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.beneficier">
+                </div>
+                <div class="c x4 yb w6 ha">
+                    <input style="text-align: center;" type="text" size="10" class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.Ncheque">
+                </div>
+                <div class="c xb yb w4 ha">
+                    <input style="text-align: center;" type="text" size="10" class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.bank">
+                </div>
+                <div class="c x7 yb w4 ha">
+                    <div class="t m0 xa hb yc ff2 fs4 fc0 sc0 ls0 ws0">&lt;dec_espece&gt;</div>
+                </div>
+                <div class="c xd yb w7 ha">
+                    <input style="text-align: center;" type="text" size="10" class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.montant">
+                </div>
+                <div class="c xf yb w8 ha">
+                    <input type="text"  class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.objet">
+                </div>
+                <div class="c x11 yb w9 ha">
+                    <input type="text"  class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0" name="beneficier" ngDefaultControl [(ngModel)]="req.observation">
+                </div>
+                <div class="c x9 ye wa hd">
+                    <div class="t m0 x16 h6 yf ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Signature donneur </div>
+                    <div class="t m0 x17 h6 y5 ff1 fs3 fc0 sc0 ls0 ws0">d’ordre</div>
+                </div>
+                <div class="c xb ye wb hd">
+                    <div class="t m0 x18 h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Financier</div>
+                </div>
+                <div class="c xd ye wc hd">
+                    <div class="t m0 x19 h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Directeur Général</div>
+                </div>
+                <div class="c x11 ye w9 hd">
+                    <div class="t m0 x16 h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Bénéficier</div>
+                </div>
+                <div class="t m0 x1a h2 y11 ff1 fs0 fc0 sc0 ls0 ws0"> Date: &lt;dec_date2&gt;</div>
+                <div class="t m0 x2 h3 y12 ff1 fs1 fc0 sc0 ls0 ws0">Reçu Décaissement</div>
+                <div class="t m0 x1b h4 y13 ff1 fs2 fc0 sc0 ls0 ws0">N° &lt;dec_number2&gt;</div>
+                <div class="c x4 y14 wd h5">
+                    <div class="t m0 x1c h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Modalité</div>
+                </div>
+                <div class="c x4 y15 we h5">
+                    <div class="t m0 x1d h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Cheque</div>
+                </div>
+                <div class="c x1e y15 wf h5">
+                    <div class="t m0 xe h6 y5 ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Espèce </div>
+                </div>
+                <div class="c x9 y16 w10 h7">
+                    <div class="t m0 x8 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Bénéficier </div>
+                </div>
+                <div class="c x4 y17 w11 h8">
+                    <div class="t m0 xa h9 ya ff2 fs3 fc0 sc0 ls0 ws0">N° du cheque</div>
+                </div>
+                <div class="c xb y17 w12 h8">
+                    <div class="t m0 x1f h9 ya ff2 fs3 fc0 sc0 ls0 ws0">Bank</div>
+                </div>
+                <div class="c x20 y16 w13 h7">
+                    <div class="t m0 xe h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Montant</div>
+                </div>
+                <div class="c x21 y16 w14 h7">
+                    <div class="t m0 x9 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Objet du règlement</div>
+                </div>
+                <div class="c x22 y16 w15 h7">
+                    <div class="t m0 x23 h6 y8 ff1 fs3 fc0 sc0 ls0 ws0">Observation</div>
+                </div>
+                <div class="c x9 y18 w10 ha">
+                    <div class="t m0 x0 hb yc ff2 fs4 fc0 sc0 ls0 ws0">&lt;dec_beneficier2&gt;</div>
+                </div>
+                <div class="c x4 y18 w11 ha">
+                    <div class="t m0 x14 hb y19 ff2 fs4 fc0 sc0 ls0 ws0">&lt;dec_cheque2&gt;</div>
+                </div>
+                <div class="c xb y18 w12 ha">
+                    <div class="t m0 x10 hc yd ff2 fs5 fc0 sc0 ls0 ws0">&lt;dec_bank2&gt;</div>
+                </div>
+                <div class="c x1e y18 wf ha">
+                    <div class="t m0 x0 hb y19 ff2 fs4 fc0 sc0 ls0 ws0">&lt;dec_espece2&gt;</div>
+                </div>
+                <div class="c x20 y18 w13 ha">
+                    <div class="t m0 x24 hb y19 ff2 fs4 fc0 sc0 ls0 ws0">&lt;dec_montant2&gt;</div>
+                </div>
+                <div class="c x21 y18 w14 ha">
+                    <div class="t m0 x12 hc yd ff2 fs5 fc0 sc0 ls0 ws0">&lt;dec_objet2&gt;</div>
+                </div>
+                <div class="c x22 y18 w15 ha">
+                    <div class="t m0 x15 hc yd ff2 fs5 fc0 sc0 ls0 ws0">&lt;dec_observation2&gt;</div>
+                </div>
+                <div class="c x9 y1a w16 hd">
+                    <div class="t m0 x16 h6 yf ff1 fs3 fc0 sc0 ls0 ws0" style="padding-top: 100px;" >Signature donneur </div>
+                    <div class="t m0 x17 h6 y5 ff1 fs3 fc0 sc0 ls0 ws0">d’ordre</div>
+                </div>
+                <div class="c xb y1a w17 hd">
+                    <div class="t m0 x25 h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Financier</div>
+                </div>
+                <div class="c x20 y1a w18 hd">
+                    <div class="t m0 x1d h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Directeur Général</div>
+                </div>
+                <div class="c x22 y1a w15 hd">
+                    <div class="t m0 x26 h6 y10 ff1 fs3 fc0 sc0 ls0 ws0">Bénéficier</div>
+                </div>
+            </div>
+            <div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+        </div>
+    </div>
+    <div class="loading-indicator">
+
+    </div>
+
+
